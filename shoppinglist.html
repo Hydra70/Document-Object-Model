@@ -1,0 +1,24 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <ul>
+      <li>Shopping List:</li>
+    </ul>
+    <input type="text" id="supplies">
+    <button onclick="purchase()">Add to list</button>
+    <script>
+      function purchase() {
+        var x = document.getElementById('supplies').value;
+        document.getElementById('supplies').value = "";
+        var ulTag = document.getElementsByTagName('ul')[0];
+        var newItem = document.createElement('li');
+        ulTag.appendChild(newItem);
+        var newText = document.createTextNode(x);
+        newItem.appendChild(newText);
+        document.body.appendChild(ulTag);
+      }
+    </script>
+  </body>
+</html>
